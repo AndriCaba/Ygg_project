@@ -36,7 +36,7 @@ public class NewSceneLoader : MonoBehaviour
         transition2.SetTrigger("Start2");
 
         yield return new WaitForSeconds(transitionTime);
-
+            
         SceneManager.LoadScene(levelIndex);
     }
 }
