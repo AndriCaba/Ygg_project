@@ -1562,6 +1562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 3135137185673597842, guid: fe7d972cec9553f47b54a148c982b4e9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4376448367344658757, guid: fe7d972cec9553f47b54a148c982b4e9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
