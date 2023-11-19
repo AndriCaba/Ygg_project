@@ -21,12 +21,18 @@ public class PlayerBullet : MonoBehaviour
 
         Debug.Log(hitInfo.name);
         EnemyScript enemy = hitInfo.GetComponent<EnemyScript>();
+        BossHealth boss = hitInfo.GetComponent<BossHealth>();
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
 
         }
 
+        if (boss != null)
+        {
+            boss.TakeDamage(damage);
+
+        }
         Destroy(gameObject);
 
     }
