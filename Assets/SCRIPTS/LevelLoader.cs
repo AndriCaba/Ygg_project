@@ -40,6 +40,21 @@ public class NewSceneLoader : MonoBehaviour
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - 3));
     }
 
+    public void LoadMainMenuLevel2()
+    {
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - 4));
+    }
+
+    public void LoadMainMenuLevel3()
+    {
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - 5));
+    }
+
+    public void LoadMainMenuBossLevel()
+    {
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - 6));
+    }
+
     IEnumerator LoadLevel(int levelIndex)
     {
         transition1.SetTrigger("Start");
