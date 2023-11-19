@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
     // Start is called before the first frame update
     public Transform firepoint;
     public GameObject bulletPrefab;
+    public SpriteRenderer spriteRenderer;
 
     void Update()
     {
@@ -15,10 +16,18 @@ public class Weapon : MonoBehaviour
             Shoot();
         }
     }
-    void Shoot() {
+    void Shoot()
+    {
 
 
         Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
-    
+
     }
+
+    public void UpdateOrientation(bool isFacingRight)
+    {
+        spriteRenderer.flipX = !isFacingRight;
+    }
+
+
 }

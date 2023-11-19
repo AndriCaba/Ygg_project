@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NewSceneLoader : MonoBehaviour
+public class CollisionNextScene : MonoBehaviour
 {
 
     public Animator transition1, transition2;
     public float transitionTime = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,24 +21,17 @@ public class NewSceneLoader : MonoBehaviour
         
     }
 
-    public void LoadNextScene()
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        }
     }
 
     public void LoadPreviousScene()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - 1));
-    }
-
-    public void LoadMainMenuFromTutorial()
-    {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - 2));
-    }
-
-    public void LoadMainMenuLevel1()
-    {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex - 3));
     }
 
     IEnumerator LoadLevel(int levelIndex)
@@ -46,7 +40,7 @@ public class NewSceneLoader : MonoBehaviour
         transition2.SetTrigger("Start2");
 
         yield return new WaitForSeconds(transitionTime);
-            
+
         SceneManager.LoadScene(levelIndex);
     }
 }

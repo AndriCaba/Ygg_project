@@ -50,4 +50,11 @@ public class PlayerHealth1 : MonoBehaviour
 
 
     }
+
+    public void RestoreHealth(int amount)
+    {
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+        healthbar.SetHealth(currentHealth);
+        Debug.Log("Health Restored! Current Health: " + currentHealth);
+    }
 }

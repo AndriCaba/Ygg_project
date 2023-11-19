@@ -8,6 +8,9 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    public Weapon weapon;
+    public PlayerBullet playerBullet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +22,7 @@ public class PauseMenu : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPaused )
+            if (GameIsPaused)
             {
                 Resume();
             }
@@ -35,11 +38,24 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        EnableScripts();
     }
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        DisableScripts();
+    }
+
+    public void EnableScripts ()
+    {
+        weapon.enabled = true;
+        playerBullet.enabled = true;
+    }
+    public void DisableScripts ()
+    {
+        weapon.enabled = false;
+        playerBullet.enabled = false;
     }
 }

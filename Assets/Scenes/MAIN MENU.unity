@@ -900,8 +900,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07e2b7dae483e34f97bd6f9f9c74591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition1: {fileID: 0}
-  transition2: {fileID: 0}
+  transition1: {fileID: 4689346819009495300}
+  transition2: {fileID: 4689346819009495299}
   transitionTime: 1
 --- !u!114 &1262103404
 MonoBehaviour:
@@ -1666,6 +1666,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b07e2b7dae483e34f97bd6f9f9c74591, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &4689346819009495299 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 760811632710789945, guid: fe7d972cec9553f47b54a148c982b4e9, type: 3}
+  m_PrefabInstance: {fileID: 4689346819009495297}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4689346819009495300 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7580093313106488990, guid: fe7d972cec9553f47b54a148c982b4e9, type: 3}
+  m_PrefabInstance: {fileID: 4689346819009495297}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
